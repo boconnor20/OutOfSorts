@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Arrays;
 public class SortsTester{
   public static void main(String[] args){
-    int size=2;
+    int size=5;
     int[] arr = new int[size];
     int b = (int)(Math.random()*1000);
     Random rng = new Random(b);
@@ -12,7 +12,7 @@ public class SortsTester{
     Sorts tester = new Sorts();
     System.out.println("For seed #" + b ) ;
     System.out.println("Before: " + Arrays.toString(arr));
-    tester.bubbleSort(arr);
+    tester.insertionSort(arr);
     System.out.println("After: " +  Arrays.toString(arr));
   }
 }
