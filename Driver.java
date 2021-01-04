@@ -28,20 +28,10 @@ public class Driver{
         }
         Arrays.sort(randData);
       }else if(args[2].equals("reversed")){
-        for(int i = 0 ; i < randData.length; i++){
-          randData[i] =(int)(Math.random()*10000);
+        for (int i = 0; i < randData.length; i++) {
+          randData[i] = randData.length - i;
         }
-        for (int j=0; j<randData.length-1; j++){
-                if (randData[j]<randData[j+1]){
-                    continue;
-                }
-                else {
-                    int temp=randData[j];
-                    randData[j]=randData[j+1];
-                    randData[j+1]=temp;
-                }
-            }
-        }
+      }
 
 
       if(args[1].equals("bubble")){

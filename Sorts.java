@@ -4,15 +4,19 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
   public static void bubbleSort(int[] data){
-      for (int i=0; i<data.length; i++){
-          for (int j=0; j<data.length-1-i; j++){
-
-              if (data[j]>data[j+1]){
-                  int temp=data[j];
-                  data[j]=data[j+1];
-                  data[j+1]=temp;
+       boolean sorted = false;
+      int length=data.length-1;
+      while (!sorted){
+          sorted=true;
+          for (int i=0; i<length; i++){
+              if (data[i]>data[i+1]){
+                  int temp=data[i];
+                  data[i]=data[i+1];
+                  data[i+1]=temp;
+                  sorted =false;
                 }
             }
+            length--;
         }
   }
   public static void selectionSort(int[] data) {
@@ -31,14 +35,14 @@ public class Sorts{
    }
   }
   public static void insertionSort(int[] data){
-    for (int i=1; i<data.length;i++){
-      int temp = data[i];
-      int j= i-1;
-      while (j>=0&& data[j]>temp){
-        data[j+1]=data[j];
-        j--;
-      }
-      data[j+1]=temp;
-    }
-  }
+   for(int i = 1; i < data.length; i ++){
+     int j = i;
+     while(j > 0 && data[j-1]>data[j]){
+       int temp = data[j];
+       data[j]=data[j-1];
+       data[j-1] = temp;
+       j -=1;
+     }
+   }
+ }
 }
