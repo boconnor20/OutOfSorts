@@ -20,20 +20,20 @@ public class Sorts{
         }
   }
   public static void selectionSort(int[] data) {
-   for(int i = 0; i < data.length -1; i++){
-     int startingInd = i;
+    int length=data.length;
+      for (int i=0; i<length-1; i++){
+        int ind=i;
 
-     for(int j = i + 1; j < data.length; j ++){
-       if(data[j]<data[startingInd]){
-         startingInd = j;
-       }
-     }
+      for (int j=i+1; j<length;j++){
+        if (data[j]<data[ind])
+          ind=j;
+      }
 
-     int temp = data[startingInd];
-     data[startingInd] = data[i];
-     data[i] = temp;
+      int temp=data[ind];
+      data[ind]=data[i];
+      data[i]=temp;
    }
-  }
+ }
   public static void insertionSortZ(int[] data){
    for(int i = 1; i < data.length; i ++){
      int j = i;
